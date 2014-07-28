@@ -7,17 +7,20 @@
 """
 
 from flask import Flask
+from myip import config
 from myip.views import bp as main_views
 
 
-def create_app(package_name, settings_override=None):
+def create_app():
     """Returns a :class:`Flask` application instance configured with common
     functionality for the myip platform.
 
     :param package_name: application package name
-    :param package_path: application package path
     :param settings_override: a dictionary of setings to override
     """
-    app = Flask(package_name, instance_relative_config=True)
+    app = Flask(__name__, instance_relative_config=True)
+
+    app.config.from_object(config)
     app.register_blueprint(main_views)
+
     return app

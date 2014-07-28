@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template
 
 
 bp = Blueprint('views', __name__, url_prefix='')
@@ -11,4 +11,4 @@ def get_ip():
 
 @bp.route('/', methods=['GET'])
 def index():
-    pass
+    return render_template('index.html')
