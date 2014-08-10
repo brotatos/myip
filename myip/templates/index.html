@@ -10,9 +10,11 @@
   </head>
   <body>
     {% block content %}
-    <div>Foo</div>
+    <div class="centered" id="ip">{{ ip }}</div>
     {% endblock %}
     {% block script %}
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/myip.js') }}"></script>
     {% endblock %}
   </body>
 </html>
