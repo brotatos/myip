@@ -1,9 +1,3 @@
-/*
- * Oh hi there.
- *
- * I just wanted to dabble in some very basic jQuery.
- */
-
 $(document).ready(function() {
     var $body = $(document.body);
     var $ip = $("#ip");
